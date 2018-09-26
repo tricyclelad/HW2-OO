@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    public class AthleteStatusProcessor : MessageProcessor
+    public class NewAthleteProcessor : MessageProcessor
     {
-        public void Process()
+        public void Process(ref RaceManager _MyRaceManager)
         {
 
         }

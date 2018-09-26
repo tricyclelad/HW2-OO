@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    public class StartedUpdateProcessor : MessageProcessor
+    public interface MessageProcessor
     {
-        public void Process()
-        {
-
-        }
+        void Process(ref RaceManager _MyRaceManager);
     }
 }

@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class RegisteredUpdateProcessor : MessageProcessor
     {
-        public void Process()
+        public void Process(ref RaceManager _MyRaceManager)
         {
 
         }

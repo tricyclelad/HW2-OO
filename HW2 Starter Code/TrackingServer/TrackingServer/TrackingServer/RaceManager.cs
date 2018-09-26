@@ -13,14 +13,23 @@ namespace TrackingServer
         Athletes MyRunners { get; set; }
         List<Athlete> MyRunners2 = new List<Athlete>();
         MessageProcessor MyMessageProcessor {get; set; }
+        string RaceName { get; set; }
+        double CourseLength { get; set;  }
+
         public RaceManager()
         {
             MyCommunicator = new Communicator(12000);
+           
         }
 
         public void start()
         {
             MyCommunicator.Start();
+            string MessageFromCommunicator = "Race";
+            MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
+            var temp = this;
+            MyMessageProcessor.Process(ref temp);
+
         }
 
         public void stop()
