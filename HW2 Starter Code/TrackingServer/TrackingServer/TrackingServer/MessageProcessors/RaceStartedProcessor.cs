@@ -10,8 +10,8 @@ namespace TrackingServer
     {
         public void Process(string[] Message, ref RaceManager _MyRaceManager)
         {
-            //_MyRaceManager.
-
+            _MyRaceManager.RaceName = Message[1];
+            _MyRaceManager.CourseLength = Convert.ToDouble(Message[2]);
         }
     }
 }
