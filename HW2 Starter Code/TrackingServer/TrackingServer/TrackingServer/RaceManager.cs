@@ -33,52 +33,65 @@ namespace TrackingServer
             MessageProcessor _myProcessor = null;
             if(SplitMessage[0] == "Race")
             {
-                //do this thing.
+                _myProcessor = new RaceStartedProcessor();
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Registered")
             {
-
+                _myProcessor = new RegisteredUpdateProcessor();
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "DidNotStart")
             {
-
+                _myProcessor = new DidNotStartProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Started")
             {
-
+                _myProcessor = new StartedUpdateProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "OnCourse")
             {
-
+                _myProcessor = new OnCourseUpdateProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "DidNotFinish")
             {
-
+                _myProcessor = new DidNotFinishUpdateProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Finished")
             {
-
+                _myProcessor = new FinishedUpdateProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Hello")
             {
-
+                _myProcessor = new HelloProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Subscribe")
             {
-
+                _myProcessor = new SubscribeProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Unsubscribe")
             {
-
+                _myProcessor = new UnsubscribeProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Athlete")
             {
-
+                _myProcessor = new NewAthleteProcessor(); 
+                return _myProcessor;
             }
             else if (SplitMessage[0] == "Status")
             {
-
+                _myProcessor = new AthleteStatusProcessor(); 
+                return _myProcessor;
             }
+            return _myProcessor;
         }
         
     }
