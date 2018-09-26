@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    class Message
+    public class Message
     {
+
     }
 }

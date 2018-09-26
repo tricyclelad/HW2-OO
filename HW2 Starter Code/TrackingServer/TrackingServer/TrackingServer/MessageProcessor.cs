@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    interface processMessage
+    public interface MessageProcessor
     {
+        void Process();
     }
 }

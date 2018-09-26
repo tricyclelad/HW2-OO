@@ -11,9 +11,11 @@ namespace TrackingServer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Communicator communicator = new Communicator(12000);
-            communicator.Start();
+            RaceManager MyRaceManager = new RaceManager();
+            MyRaceManager.start();
+         //   Console.WriteLine("Hello World!");
+          //  Communicator communicator = new Communicator(12000);
+           // communicator.Start();
             //while (!communicator.IsMessageAvailable())
             //    Console.WriteLine("Message Not Ready");
 
