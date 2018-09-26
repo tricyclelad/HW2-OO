@@ -13,11 +13,13 @@ namespace TrackingServer
         {
             Console.WriteLine("Hello World!");
             Communicator communicator = new Communicator(12000);
-            while (!communicator.IsMessageAvailable())
-                Console.WriteLine("Message Not Ready");
+            communicator.Start();
+            //while (!communicator.IsMessageAvailable())
+            //    Console.WriteLine("Message Not Ready");
 
-            Console.WriteLine("Message Ready:");
-            Console.ReadKey();
+            //Console.WriteLine("Message Ready:");
+
+            //Console.ReadKey();
         }
     }
 }
