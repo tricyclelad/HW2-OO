@@ -26,9 +26,10 @@ namespace TrackingServer
         {
             MyCommunicator.Start();
             string MessageFromCommunicator = "Race";
+            string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
             var temp = this;
-            MyMessageProcessor.Process(ref temp);
+            MyMessageProcessor.Process(SplitMessage, ref temp);
 
         }
 
