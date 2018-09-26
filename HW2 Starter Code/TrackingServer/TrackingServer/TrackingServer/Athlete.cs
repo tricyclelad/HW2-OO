@@ -30,6 +30,7 @@ namespace TrackingServer
             double _lastUpdatedTime,
             double _finishTime)
         {
+            bibNumber = _bibNumber;
             firstName =_firstName; 
             lastName = _lastName;
             gender = _gender;

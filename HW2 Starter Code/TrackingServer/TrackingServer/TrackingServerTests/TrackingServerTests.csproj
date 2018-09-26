@@ -55,6 +55,7 @@
     <Compile Include="RegisteredUpdateProcessorTest.cs" />
     <Compile Include="RaceStartedProcessorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DidNotStartProcessorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

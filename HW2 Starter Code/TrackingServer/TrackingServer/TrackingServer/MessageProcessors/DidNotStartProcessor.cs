@@ -10,7 +10,15 @@ namespace TrackingServer
     {
         public void Process(string [] Message, ref RaceManager _MyRaceManager)
         {
-
+            foreach (var athlete in _MyRaceManager.MyRunners)
+            {
+                if (athlete.bibNumber == Convert.ToInt32(Message[1])) 
+                {
+                    athlete.startTime = 0;
+                    athlete.finishTime = -1;
+                    //Communicator Logic here
+                }
+            }
         }
     }
 }
