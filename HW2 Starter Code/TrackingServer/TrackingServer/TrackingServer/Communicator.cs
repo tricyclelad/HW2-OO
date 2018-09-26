@@ -138,7 +138,7 @@ namespace Base
                 var message = GetMessage(out senderEndPoint);
                 if (message == null) continue;
 
-                //IncomingMessage?.Invoke(message, senderEndPoint);
+                IncomingMessage?.Invoke(message, senderEndPoint);
                 Console.WriteLine(message);
 
             }
