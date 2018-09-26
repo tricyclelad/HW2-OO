@@ -9,18 +9,14 @@ namespace TrackingServer
 {
     public class RaceManager
     {
-        Communicator MyCommunicator;// { get; set; } 
-        Athletes MyRunners { get; set; }
-        List<Athlete> MyRunners2 = new List<Athlete>();
-        MessageProcessor MyMessageProcessor {get; set; }
+        public Communicator MyCommunicator;// { get; set; } 
+        public List<Athlete> MyRunners = new List<Athlete>();
+        public MessageProcessor MyMessageProcessor {get; set; }
         public string RaceName { get; set; }
         public double CourseLength { get; set;  }
 
         public RaceManager()
         {
-            MyCommunicator = new Communicator(12000);
-            MyRunners = null; 
-            MyRunners2 = null;
             MyMessageProcessor = null;
             RaceName = null;
             CourseLength = 0;
@@ -29,12 +25,13 @@ namespace TrackingServer
 
         public void start()
         {
+            MyCommunicator = new Communicator(12000);
             MyCommunicator.Start();
-            string MessageFromCommunicator = "Race, RaceName, 100";
-            string[] SplitMessage = MessageFromCommunicator.Split(',');
-            MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
-            var temp = this;
-            MyMessageProcessor.Process(SplitMessage, ref temp);
+            //string MessageFromCommunicator = "Race, RaceName, 100";
+            //string[] SplitMessage = MessageFromCommunicator.Split(',');
+            //MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
+            //var temp = this;
+            //MyMessageProcessor.Process(SplitMessage, ref temp);
 
         }
 
@@ -42,7 +39,7 @@ namespace TrackingServer
         {
             MyCommunicator.Stop();
         }
-        private static MessageProcessor GetMessageProcessor(string message)
+        public MessageProcessor GetMessageProcessor(string message)
         {
             string[] SplitMessage = message.Split(',');
             MessageProcessor _myProcessor = null;

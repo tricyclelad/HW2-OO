@@ -10,7 +10,16 @@ namespace TrackingServer
     {
         public void Process(string[] Message, ref RaceManager _MyRaceManager)
         {
+            Athlete MyAthlete = new Athlete();
+            MyAthlete.bibNumber = Convert.ToInt32(Message[1]);
+            MyAthlete.startTime = Convert.ToDouble(Message[2]);
+            MyAthlete.firstName = Message[3];
+            MyAthlete.lastName = Message[4];
+            MyAthlete.gender = Message[5];
+            MyAthlete.age = Convert.ToInt32(Message[6]);
 
+            _MyRaceManager.MyRunners.Add(MyAthlete);
+            //here is where the communication logic would go
         }
     }
 }

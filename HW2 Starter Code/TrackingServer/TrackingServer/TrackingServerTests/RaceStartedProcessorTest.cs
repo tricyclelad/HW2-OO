@@ -11,16 +11,13 @@ namespace TrackingServerTests
         [TestMethod]
         public void TestMethod1()
         {
-            Communicator MyCommunicator = new Communicator(12000);
-            MessageProcessor MyMessageProcessor;
-            //MyCommunicator.Start();
             RaceManager MyRaceManager = new RaceManager();
-            MyRaceManager.start();
-            //string MessageFromCommunicator = "Race, RaceName, 100";
-            //string[] SplitMessage = MessageFromCommunicator.Split(',');
-            //MyMessageProcessor = RaceManager.GetMessageProcessor(MessageFromCommunicator);
-            //var temp = this;
-            //MyMessageProcessor.Process(SplitMessage, ref temp);
+            string MessageFromCommunicator = "Race,RaceName,100";
+            string[] SplitMessage = MessageFromCommunicator.Split(',');
+            MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
+            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager);
+            Assert.AreEqual(MyRaceManager.RaceName,"RaceName" ); 
+            Assert.AreEqual(MyRaceManager.CourseLength,100); 
         }
     }
 }

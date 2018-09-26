@@ -52,5 +52,18 @@ namespace TrackingServer
             lastUpdatedTime = _athlete.lastUpdatedTime;
             finishTime = _athlete.finishTime;
         }
+
+        public Athlete()
+        {
+            firstName =null;
+            lastName = null;
+            gender = null;
+            age = -1;
+            status = null;
+            distanceCovered = -1;
+            startTime = -1;
+            lastUpdatedTime = -1;
+            finishTime = -1;
+        }
     }
 }
