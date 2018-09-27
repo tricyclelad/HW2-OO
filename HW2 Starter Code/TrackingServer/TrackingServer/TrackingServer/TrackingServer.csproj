@@ -52,7 +52,6 @@
     <Compile Include="MessageProcessors\DidNotFinishUpdateProcessor.cs" />
     <Compile Include="MessageProcessors\FinishedUpdateProcessor.cs" />
     <Compile Include="MessageProcessors\HelloProcessor.cs" />
-    <Compile Include="Message.cs" />
     <Compile Include="MessageProcessors\MessageProcessor.cs" />
     <Compile Include="MessageProcessors\NewAthleteProcessor.cs" />
     <Compile Include="MessageProcessors\OnCourseUpdateProcessor.cs" />
@@ -70,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
