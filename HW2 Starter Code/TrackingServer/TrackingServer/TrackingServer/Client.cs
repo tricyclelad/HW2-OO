@@ -8,8 +8,8 @@ namespace TrackingServer
 {
     public class Client : Observer
     {
-        string IPaddress { get; set; }
-        string EndPoint { get; set; }
+        public string IPaddress { get; set; }
+        public string EndPoint { get; set; }
         public Client(string _IPaddress, string _EndPoint)
         {
             IPaddress = _IPaddress;
