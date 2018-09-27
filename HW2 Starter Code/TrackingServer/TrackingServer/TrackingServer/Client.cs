@@ -18,7 +18,7 @@ namespace TrackingServer
 
         public override void Update()
         {
-            Console.WriteLine(IPaddress+ " " + EndPoint + "Got an update.");
+            Console.WriteLine(IPaddress+ " " + EndPoint + " Got an update.");
             //Logic for communication would go here
         }
     }

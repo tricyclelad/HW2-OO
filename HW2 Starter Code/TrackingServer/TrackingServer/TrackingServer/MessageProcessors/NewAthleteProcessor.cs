@@ -10,7 +10,13 @@ namespace TrackingServer
     {
         public void Process(string[] Message, ref RaceManager _MyRaceManager)
         {
-
+            foreach (var c in _MyRaceManager.MyClients)
+            {
+                //This is where the message would be sent through the communicator
+                //to the clients
+                //c.send message through communicator
+                c.Update(); 
+            }
         }
     }
 }

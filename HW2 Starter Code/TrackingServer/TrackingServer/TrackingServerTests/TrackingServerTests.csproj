@@ -62,6 +62,7 @@
     <Compile Include="FinishedUpdateProcessorTest.cs" />
     <Compile Include="ClientTest.cs" />
     <Compile Include="AthleteTest.cs" />
+    <Compile Include="NewAthleteTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
