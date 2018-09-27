@@ -27,12 +27,19 @@ namespace TrackingServer
         public void start()
         {
             MyCommunicator = new Communicator(12000);
+            MyCommunicator.IncomingMessage += MyCommunicator_IncomingMessage;
             MyCommunicator.Start();
             //string MessageFromCommunicator = "Race, RaceName, 100";
             //string[] SplitMessage = MessageFromCommunicator.Split(',');
             //MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
             //var temp = this;
             //MyMessageProcessor.Process(SplitMessage, ref temp);
+        }
+
+        private void MyCommunicator_IncomingMessage(string message, System.Net.IPEndPoint senderEndPoint)
+        {
+            MessageProcessor myProcessor = GetMessageProcessor(message);
+            myProcessor.Process(message, senderEndPoint);
         }
 
         public void stop()
