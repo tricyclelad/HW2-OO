@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Athlete.cs" />
-    <Compile Include="Athletes.cs" />
     <Compile Include="MessageProcessors\AthleteStatusProcessor.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Communicator.cs" />
