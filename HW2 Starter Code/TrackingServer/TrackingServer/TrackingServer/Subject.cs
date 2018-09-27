@@ -10,6 +10,14 @@ namespace TrackingServer
     {
         public List<Observer> _observers = new List<Observer>();
 
+        public Observer Observers
+        {
+            get => default(Observer);
+            set
+            {
+            }
+        }
+
         public void Attach(Observer observer)
         {
             _observers.Add(observer);

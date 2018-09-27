@@ -10,6 +10,15 @@ namespace TrackingServer
     {
         public string IPaddress { get; set; }
         public string EndPoint { get; set; }
+
+        public Athlete Subject
+        {
+            get => default(Athlete);
+            set
+            {
+            }
+        }
+
         public Client(string _IPaddress, string _EndPoint)
         {
             IPaddress = _IPaddress;
