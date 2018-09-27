@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    abstract class Subject
+    public abstract class Subject
     {
         private List<Observer> _observers = new List<Observer>();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackingServer
 {
-    public class Athlete
+    public class Athlete : Subject
     {
         public int bibNumber { get; set; }
         public string firstName { get; set; }
