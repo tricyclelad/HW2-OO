@@ -12,6 +12,8 @@ namespace TrackingServerTests
         public void TestMethod1()
         {
             RaceManager MyRaceManager = new RaceManager();
+            Client myClient = new Client("127.0.0.1", "12000");
+            MyRaceManager.MyClients.Add(myClient);
             string MessageFromCommunicator = "Race,RaceName,100";
             string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
