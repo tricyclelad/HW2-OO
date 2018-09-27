@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public abstract class Subject
     {
-        private List<Observer> _observers = new List<Observer>();
+        public List<Observer> _observers = new List<Observer>();
 
         public void Attach(Observer observer)
         {

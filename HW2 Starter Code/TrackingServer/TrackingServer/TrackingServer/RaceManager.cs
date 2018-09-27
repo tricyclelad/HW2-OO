@@ -11,6 +11,7 @@ namespace TrackingServer
     {
         public Communicator MyCommunicator;// { get; set; } 
         public List<Athlete> MyRunners = new List<Athlete>();
+        public List<Client> MyClients = new List<Client>();
         public MessageProcessor MyMessageProcessor {get; set; }
         public string RaceName { get; set; }
         public double CourseLength { get; set;  }
@@ -32,7 +33,6 @@ namespace TrackingServer
             //MyMessageProcessor = GetMessageProcessor(MessageFromCommunicator);
             //var temp = this;
             //MyMessageProcessor.Process(SplitMessage, ref temp);
-
         }
 
         public void stop()

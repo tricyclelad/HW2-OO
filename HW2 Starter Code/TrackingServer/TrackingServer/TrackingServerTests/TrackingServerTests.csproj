@@ -60,6 +60,8 @@
     <Compile Include="OnCourseUpdateProcessorTest.cs" />
     <Compile Include="DidNotFinishProcessorTest.cs" />
     <Compile Include="FinishedUpdateProcessorTest.cs" />
+    <Compile Include="ClientTest.cs" />
+    <Compile Include="AthleteTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
