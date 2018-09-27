@@ -65,6 +65,7 @@
     <Compile Include="NewAthleteTest.cs" />
     <Compile Include="AthleteStatus.cs" />
     <Compile Include="HelloProcessorTest.cs" />
+    <Compile Include="SubscribeProcessorTest.cs" />
     <Compile Include="UnsubscribeProcessorTest.cs" />
   </ItemGroup>
   <ItemGroup>
