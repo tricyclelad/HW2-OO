@@ -8,6 +8,6 @@ namespace TrackingServer
 {
     public interface MessageProcessor
     {
-        void Process(string []Message, ref RaceManager _MyRaceManager);
+        void Process(string[] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint);
     }
 }

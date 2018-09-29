@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class RegisteredUpdateProcessor : MessageProcessor
     {
-        public void Process(string[] Message, ref RaceManager _MyRaceManager)
+        public void Process(string[] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint)
         {
             Athlete MyAthlete = new Athlete();
             MyAthlete.bibNumber = Convert.ToInt32(Message[1]);

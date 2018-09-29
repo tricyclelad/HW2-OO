@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class UnsubscribeProcessor : MessageProcessor
     {
-        public void Process(string[] Message, ref RaceManager _MyRaceManager)
+        public void Process(string[] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint)
         {
             foreach (var client in _MyRaceManager.MyClients)
             {

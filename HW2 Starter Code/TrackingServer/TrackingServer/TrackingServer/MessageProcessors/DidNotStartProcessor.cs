@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class DidNotStartProcessor : MessageProcessor
     {
-        public void Process(string [] Message, ref RaceManager _MyRaceManager)
+        public void Process(string [] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint)
         {
             foreach (var athlete in _MyRaceManager.MyRunners)
             {

@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class RaceStartedProcessor : MessageProcessor
     {
-        public void Process(string[] Message, ref RaceManager _MyRaceManager)
+        public void Process(string[] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint)
         {
             _MyRaceManager.RaceName = Message[1];
             _MyRaceManager.CourseLength = Convert.ToDouble(Message[2]);

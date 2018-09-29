@@ -8,7 +8,7 @@ namespace TrackingServer
 {
     public class HelloProcessor : MessageProcessor
     {
-        public void Process(string[] Message, ref RaceManager _MyRaceManager)
+        public void Process(string[] Message, ref RaceManager _MyRaceManager, System.Net.IPEndPoint senderEndPoint)
         {
             Client client = new Client(Message[1],Message[2]);
             _MyRaceManager.MyClients.Add(client);
