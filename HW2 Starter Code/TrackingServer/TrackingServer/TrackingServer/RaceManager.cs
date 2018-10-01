@@ -15,6 +15,7 @@ namespace TrackingServer
         public MessageProcessor MyMessageProcessor {get; set; }
         public string RaceName { get; set; }
         public double CourseLength { get; set;  }
+        public bool RaceStarted = false;
 
         public RaceManager()
         {

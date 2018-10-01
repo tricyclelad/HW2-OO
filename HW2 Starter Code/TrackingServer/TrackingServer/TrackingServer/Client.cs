@@ -20,10 +20,9 @@ namespace TrackingServer
             }
         }
 
-        public Client(string _IPaddress, string _EndPoint)
+        public Client(System.Net.IPEndPoint _EndPoint)
         {
-            //IPaddress = _IPaddress;
-            //EndPoint = _EndPoint; 
+            MyEndPoint = _EndPoint;
         }
 
         public override void Update()
