@@ -19,6 +19,13 @@ namespace TrackingServer
             MyAthlete.age = Convert.ToInt32(Message[6]);
 
             _MyRaceManager.MyRunners.Add(MyAthlete);
+            string message = "Athlete,"+MyAthlete.bibNumber+MyAthlete.firstName+MyAthlete.lastName+MyAthlete.gender+MyAthlete.age;
+
+            foreach (var client in _MyRaceManager.MyClients)
+            {
+                _MyRaceManager.MyCommunicator.Send(message,client.MyEndPoint); 
+
+            }
             //here is where the communication logic would go
         }
     }

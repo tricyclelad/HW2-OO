@@ -12,9 +12,12 @@ namespace TrackingServer
         {
             _MyRaceManager.RaceName = Message[1];
             _MyRaceManager.CourseLength = Convert.ToDouble(Message[2]);
+
+            //Race,< race name >,< course length in meters >            string message = "Race," + _MyRaceManager.RaceName + "," + _MyRaceManager.CourseLength ;
             foreach (var ob in _MyRaceManager.MyClients)
             {
-                ob.Update();
+                //ob.Update();
+                _MyRaceManager.MyCommunicator.Send(message,ob.MyEndPoint);
             }
             //Here is where all the communication logic would go
         }
