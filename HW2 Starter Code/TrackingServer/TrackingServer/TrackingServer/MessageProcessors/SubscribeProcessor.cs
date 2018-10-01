@@ -13,7 +13,7 @@ namespace TrackingServer
         {
             foreach (var client in _MyRaceManager.MyClients)
             {
-                if (client.MyEndPoint.Address == senderEndPoint.Address && client.MyEndPoint.Port == senderEndPoint.Port)
+                if (client.MyEndPoint.Address.Equals(senderEndPoint.Address) && client.MyEndPoint.Port.Equals(senderEndPoint.Port))
                 {
                     foreach (var runner in _MyRaceManager.MyRunners)
                     {
