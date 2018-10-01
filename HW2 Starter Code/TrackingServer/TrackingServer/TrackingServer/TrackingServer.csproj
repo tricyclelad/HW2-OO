@@ -46,14 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Athlete.cs" />
-    <Compile Include="MessageProcessors\AthleteStatusProcessor.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Communicator.cs" />
     <Compile Include="MessageProcessors\DidNotFinishUpdateProcessor.cs" />
     <Compile Include="MessageProcessors\FinishedUpdateProcessor.cs" />
     <Compile Include="MessageProcessors\HelloProcessor.cs" />
     <Compile Include="MessageProcessors\MessageProcessor.cs" />
-    <Compile Include="MessageProcessors\NewAthleteProcessor.cs" />
     <Compile Include="MessageProcessors\OnCourseUpdateProcessor.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Program.cs" />

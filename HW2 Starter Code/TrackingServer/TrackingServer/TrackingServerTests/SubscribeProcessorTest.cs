@@ -52,7 +52,7 @@ namespace TrackingServerTests
             string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
             MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager,endpoint1);
-            Assert.AreEqual(MyRaceManager.MyRunners[0]._observers.Count, 2);
+            Assert.AreEqual(MyRaceManager.MyRunners[0]._observers.Count, 5);
         }
     }
 }

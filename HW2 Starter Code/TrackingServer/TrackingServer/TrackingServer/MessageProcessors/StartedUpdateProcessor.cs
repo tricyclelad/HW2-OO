@@ -15,6 +15,18 @@ namespace TrackingServer
                 if (athlete.bibNumber == Convert.ToInt32(Message[1]))
                 {
                     athlete.startTime = Convert.ToInt32(Message[2]);
+                    athlete.status = "Running";
+                    string outGoingMessage = "Status," + athlete.bibNumber + "," + athlete.status + "," + athlete.startTime + "," + athlete.distanceCovered + "," + athlete.lastUpdatedTime + "," + athlete.finishTime;
+                    foreach (var client in _MyRaceManager.MyClients)
+                    {
+                        foreach (var subject in client.MyAthleteSubjects)
+                        {
+                            if (subject.bibNumber == athlete.bibNumber)
+                            {
+                                _MyRaceManager.MyCommunicator.Send(outGoingMessage, client.MyEndPoint);
+                            }
+                        }
+                    }
                     //Communicator Logic here
                 }
             }

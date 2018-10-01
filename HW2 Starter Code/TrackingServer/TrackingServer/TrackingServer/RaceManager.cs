@@ -103,16 +103,17 @@ namespace TrackingServer
                 _myProcessor = new UnsubscribeProcessor(); 
                 return _myProcessor;
             }
-            else if (SplitMessage[0] == "Athlete")
-            {
-                _myProcessor = new NewAthleteProcessor(); 
-                return _myProcessor;
-            }
-            else if (SplitMessage[0] == "Status")
-            {
-                _myProcessor = new AthleteStatusProcessor(); 
-                return _myProcessor;
-            }
+            //else if (SplitMessage[0] == "Athlete")
+            //{
+            //    _myProcessor = new NewAthleteProcessor(); 
+            //    return _myProcessor;
+            //}
+            //else if (SplitMessage[0] == "Status")
+            //{
+            //    _myProcessor = new AthleteStatusProcessor(); 
+            //    return _myProcessor;
+            //}
+            //Actually not needed
             return _myProcessor;
         }
         

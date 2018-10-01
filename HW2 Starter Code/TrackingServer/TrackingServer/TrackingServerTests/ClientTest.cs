@@ -51,10 +51,10 @@ namespace TrackingServerTests
             MyRaceManager.MyRunners[2].Attach(MyRaceManager.MyClients[2]);
             MyRaceManager.MyRunners[3].Attach(MyRaceManager.MyClients[3]);
 
-            MyRaceManager.MyRunners[0].Notify();
-            MyRaceManager.MyRunners[1].Notify();
-            MyRaceManager.MyRunners[2].Notify();
-            MyRaceManager.MyRunners[3].Notify();
+            //MyRaceManager.MyRunners[0].Notify();
+            //MyRaceManager.MyRunners[1].Notify();
+            //MyRaceManager.MyRunners[2].Notify();
+            //MyRaceManager.MyRunners[3].Notify();
 
             MyRaceManager.MyRunners[1].Detach(MyRaceManager.MyClients[1]);
             MyRaceManager.MyRunners[2].Detach(MyRaceManager.MyClients[2]);
