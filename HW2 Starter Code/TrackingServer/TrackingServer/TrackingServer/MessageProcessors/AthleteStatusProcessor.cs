@@ -15,7 +15,7 @@ namespace TrackingServer
                 //This is where the message would be sent through the communicator
                 //to the clients
                 //c.send message through communicator
-                c.Update();
+                //c.Update();
             }
         }
     }

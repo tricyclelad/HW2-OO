@@ -8,6 +8,6 @@ namespace TrackingServer
 {
     public abstract class Observer
     {
-        public abstract void Update();
+        public abstract void Update(string _Message, Athlete _MyAthlete);
     }
 }

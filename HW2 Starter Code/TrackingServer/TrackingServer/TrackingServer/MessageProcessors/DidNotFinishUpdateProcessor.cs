@@ -20,9 +20,12 @@ namespace TrackingServer
                     string outGoingMessage = "Status," + athlete.bibNumber + "," + athlete.status + "," + athlete.startTime + "," + athlete.distanceCovered + "," + athlete.lastUpdatedTime + "," + athlete.finishTime;
                     foreach (var client in _MyRaceManager.MyClients)
                     {
-                        if (client.MyAthleteSubject.bibNumber == athlete.bibNumber)
+                        foreach (var subject in client.MyAthleteSubjects)
                         {
-                            _MyRaceManager.MyCommunicator.Send(outGoingMessage, client.MyEndPoint);
+                            if (subject.bibNumber == athlete.bibNumber)
+                            {
+                                _MyRaceManager.MyCommunicator.Send(outGoingMessage, client.MyEndPoint);
+                            }
                         }
 
                     }

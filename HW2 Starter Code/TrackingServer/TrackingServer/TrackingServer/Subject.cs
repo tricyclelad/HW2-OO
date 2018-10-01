@@ -26,11 +26,11 @@ namespace TrackingServer
         {
             _observers.Remove(observer);
         }
-        public void Notify()
+        public void Notify(string _Message, Athlete _MyAthlete)
         {
             foreach (Observer ob in _observers)
             {
-                ob.Update();
+                ob.Update(_Message, _MyAthlete);
             }
         }
     }

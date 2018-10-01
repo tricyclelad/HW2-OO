@@ -19,17 +19,36 @@ namespace TrackingServer
         //    {
         //    }
         //}
-        public Athlete MyAthleteSubject { get; set; }
+        //public Athlete MyAthleteSubject { get; set; }
+        public List<Athlete> MyAthleteSubjects = new List<Athlete>();
 
         public Client(System.Net.IPEndPoint _EndPoint)
         {
             MyEndPoint = _EndPoint;
         }
 
-        public override void Update()
+        public override void Update(string _Message, Athlete _MyAthlete)
         {
-            //Console.WriteLine(IPaddress+ " " + EndPoint + " Got an update.");
-            Console.WriteLine(MyEndPoint.Address+ " " + MyEndPoint.Port + " Got an update.");
+            if (_Message =="Attach")
+            {
+                if (!MyAthleteSubjects.Contains(_MyAthlete))
+                {
+                    MyAthleteSubjects.Add(_MyAthlete);
+                }
+            }
+            if (_Message =="Detach")
+            {
+                if (MyAthleteSubjects.Contains(_MyAthlete))
+                {
+                    MyAthleteSubjects.Remove(_MyAthlete);
+                }
+            }
+            //if (!MyAthleteSubjects.Contains(_MyAthlete))
+            //{
+            //    MyAthleteSubjects.Add(_MyAthlete);
+            //}
+         //   MyAthleteSubject = _MyAthlete;
+         //   Console.WriteLine(MyEndPoint.Address + " " + MyEndPoint.Port + " Got an update.");
             //Logic for communication would go here
         }
     }

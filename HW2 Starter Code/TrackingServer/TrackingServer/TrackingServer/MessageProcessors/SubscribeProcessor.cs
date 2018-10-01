@@ -20,6 +20,7 @@ namespace TrackingServer
                         if (Convert.ToInt32(Message[1]) == runner.bibNumber)
                         {
                             runner.Attach(client);
+                            runner.Notify("Attach", runner); 
                         }
 
                     }

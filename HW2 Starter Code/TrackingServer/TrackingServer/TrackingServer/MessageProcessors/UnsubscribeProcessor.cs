@@ -19,17 +19,11 @@ namespace TrackingServer
                         if (Convert.ToInt32(Message[1]) == runner.bibNumber)
                         {
                             runner.Detach(client);
+                            runner.Notify("Detach",runner);
                         }
-
                     }
-
                 }
             }
-
-            //Since I can't get the communicator working, we'll pretend that the message is
-            //in this order unsubscribe,bibnumber,ipaddress,endpoint
-
-
         }
     }
 }
