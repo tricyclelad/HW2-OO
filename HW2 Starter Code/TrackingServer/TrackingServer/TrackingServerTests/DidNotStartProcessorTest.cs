@@ -12,6 +12,8 @@ namespace TrackingServerTests
         {
             RaceManager MyRaceManager = new RaceManager();
 
+            System.Net.IPEndPoint endpoint1 = new System.Net.IPEndPoint(127001, 12000);
+
             Athlete Athlete1 = new Athlete(1, "Camron1", "Martinez1", "Male1", 1, "Okay1", 1001, 1, 1,2 );
             Athlete Athlete2 = new Athlete(2, "Camron2", "Martinez2", "Male2", 2, "Okay2", 1002, 2, 2,3 );
             Athlete Athlete3 = new Athlete(3, "Camron3", "Martinez3", "Male3", 3, "Okay3", 1003, 3, 3,4 );
@@ -28,7 +30,7 @@ namespace TrackingServerTests
             string MessageFromCommunicator = "DidNotStart,1,-29";
             string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
-            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager);
+            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager,endpoint1);
             Assert.AreEqual(MyRaceManager.MyRunners[0].bibNumber, 1);
             Assert.AreEqual(MyRaceManager.MyRunners[1].bibNumber, 2);
             Assert.AreEqual(MyRaceManager.MyRunners[2].bibNumber, 3);
@@ -59,7 +61,7 @@ namespace TrackingServerTests
             Assert.AreEqual(MyRaceManager.MyRunners[3].age, 4);
             Assert.AreEqual(MyRaceManager.MyRunners[4].age, 1);
 
-            Assert.AreEqual(MyRaceManager.MyRunners[0].status, "Okay1");
+            Assert.AreEqual(MyRaceManager.MyRunners[0].status, "did not start");
             Assert.AreEqual(MyRaceManager.MyRunners[1].status, "Okay2");
             Assert.AreEqual(MyRaceManager.MyRunners[2].status, "Okay3");
             Assert.AreEqual(MyRaceManager.MyRunners[3].status, "Okay4");
@@ -71,7 +73,7 @@ namespace TrackingServerTests
             Assert.AreEqual(MyRaceManager.MyRunners[3].distanceCovered, 1004);
             Assert.AreEqual(MyRaceManager.MyRunners[4].distanceCovered, 1001);
 
-            Assert.AreEqual(MyRaceManager.MyRunners[0].startTime, 0);
+            Assert.AreEqual(MyRaceManager.MyRunners[0].startTime, 1);
             Assert.AreEqual(MyRaceManager.MyRunners[1].startTime, 2);
             Assert.AreEqual(MyRaceManager.MyRunners[2].startTime, 3);
             Assert.AreEqual(MyRaceManager.MyRunners[3].startTime, 4);
@@ -83,7 +85,7 @@ namespace TrackingServerTests
             Assert.AreEqual(MyRaceManager.MyRunners[3].lastUpdatedTime, 4);
             Assert.AreEqual(MyRaceManager.MyRunners[4].lastUpdatedTime, 1);
 
-            Assert.AreEqual(MyRaceManager.MyRunners[0].finishTime, -1);
+            Assert.AreEqual(MyRaceManager.MyRunners[0].finishTime, 2);
             Assert.AreEqual(MyRaceManager.MyRunners[1].finishTime, 3);
             Assert.AreEqual(MyRaceManager.MyRunners[2].finishTime, 4);
             Assert.AreEqual(MyRaceManager.MyRunners[3].finishTime, 5);

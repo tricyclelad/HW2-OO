@@ -22,10 +22,12 @@ namespace TrackingServerTests
             MyRaceManager.MyRunners.Add(Athlete3);
             MyRaceManager.MyRunners.Add(Athlete4);
 
+            System.Net.IPEndPoint endpoint1 = new System.Net.IPEndPoint(127001, 12000);
+
             string MessageFromCommunicator = "OnCourse,1,23,6666";
             string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
-            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager);
+            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager,endpoint1);
             Assert.AreEqual(MyRaceManager.MyRunners[0].distanceCovered, 6666);
             Assert.AreEqual(MyRaceManager.MyRunners[0].lastUpdatedTime, 23);
         }

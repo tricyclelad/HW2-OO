@@ -11,10 +11,22 @@ namespace TrackingServerTests
         public void TestMethod1()
         {
             RaceManager MyRaceManager = new RaceManager();
-            Client Client1 = new Client("127.0.0.1", "12000");
-            Client Client2 = new Client("127.0.0.2", "12001");
-            Client Client3 = new Client("127.0.0.3", "12002");
-            Client Client4 = new Client("127.0.0.4", "12003");
+
+            System.Net.IPEndPoint endpoint1 = new System.Net.IPEndPoint(127001, 12000);
+            System.Net.IPEndPoint endpoint2 = new System.Net.IPEndPoint(127001, 12000);
+            System.Net.IPEndPoint endpoint3 = new System.Net.IPEndPoint(127001, 12000);
+            System.Net.IPEndPoint endpoint4 = new System.Net.IPEndPoint(127001, 12000);
+
+            //Client Client1 = new Client("127.0.0.1", "12000");
+            //Client Client2 = new Client("127.0.0.2", "12001");
+            //Client Client3 = new Client("127.0.0.3", "12002");
+            //Client Client4 = new Client("127.0.0.4", "12003");
+            
+            Client Client1 = new Client(endpoint1);
+            Client Client2 = new Client(endpoint2);
+            Client Client3 = new Client(endpoint3);
+            Client Client4 = new Client(endpoint4);
+
             MyRaceManager.MyClients.Add(Client1);
             MyRaceManager.MyClients.Add(Client2);
             MyRaceManager.MyClients.Add(Client3);
@@ -38,7 +50,7 @@ namespace TrackingServerTests
             string MessageFromCommunicator = "Unsubscribe,1,127.0.0.1,12000";
             string[] SplitMessage = MessageFromCommunicator.Split(',');
             MyRaceManager.MyMessageProcessor = MyRaceManager.GetMessageProcessor(MessageFromCommunicator);
-            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager);
+            MyRaceManager.MyMessageProcessor.Process(SplitMessage, ref MyRaceManager,endpoint1);
             Assert.AreEqual(MyRaceManager.MyRunners[0]._observers.Count, 0);
         }
     }
