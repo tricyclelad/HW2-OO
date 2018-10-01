@@ -8,8 +8,9 @@ namespace TrackingServer
 {
     public class Client : Observer
     {
-        public string IPaddress { get; set; }
-        public string EndPoint { get; set; }
+        //public string IPaddress { get; set; }
+        //public string EndPoint { get; set; }
+        public System.Net.IPEndPoint MyEndPoint;
 
         public Athlete Subject
         {
@@ -21,13 +22,14 @@ namespace TrackingServer
 
         public Client(string _IPaddress, string _EndPoint)
         {
-            IPaddress = _IPaddress;
-            EndPoint = _EndPoint; 
+            //IPaddress = _IPaddress;
+            //EndPoint = _EndPoint; 
         }
 
         public override void Update()
         {
-            Console.WriteLine(IPaddress+ " " + EndPoint + " Got an update.");
+            //Console.WriteLine(IPaddress+ " " + EndPoint + " Got an update.");
+            Console.WriteLine(MyEndPoint.Address+ " " + MyEndPoint.Port + " Got an update.");
             //Logic for communication would go here
         }
     }
