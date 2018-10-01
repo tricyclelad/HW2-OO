@@ -16,7 +16,17 @@ namespace TrackingServer
                 {
                     athlete.lastUpdatedTime = Convert.ToDouble(Message[2]);
                     athlete.distanceCovered = Convert.ToDouble(Message[3]);
+                    string outGoingMessage = "Status," + athlete.bibNumber + "," + athlete.status + "," + athlete.startTime + "," + athlete.distanceCovered + "," + athlete.lastUpdatedTime + "," + athlete.finishTime;
+                    foreach (var client in _MyRaceManager.MyClients)
+                    {
+                        if (client.MyAthleteSubject.bibNumber == athlete.bibNumber)
+                        {
+                            _MyRaceManager.MyCommunicator.Send(outGoingMessage, client.MyEndPoint);
+                        }
+
+                    }
                     //Communicator Logic here
+
                 }
             }
         }
