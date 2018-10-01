@@ -12,7 +12,7 @@ namespace TrackingServer
         //public string EndPoint { get; set; }
         public System.Net.IPEndPoint MyEndPoint;
 
-        public Athlete Subject
+        public Athlete MyAthleteSubject
         {
             get => default(Athlete);
             set
