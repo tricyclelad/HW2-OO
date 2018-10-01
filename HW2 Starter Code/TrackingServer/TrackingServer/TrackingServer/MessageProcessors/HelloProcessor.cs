@@ -14,8 +14,18 @@ namespace TrackingServer
             _MyRaceManager.MyClients.Add(client);
             if (_MyRaceManager.RaceStarted)
             {
-                string OutGoingMessage = "Race," + _MyRaceManager.RaceName + "," + _MyRaceManager.CourseLength;
-                _MyRaceManager.MyCommunicator.Send(OutGoingMessage, client.MyEndPoint);
+                string OutGoingMessage1 = "Race," + _MyRaceManager.RaceName + "," + _MyRaceManager.CourseLength;
+                _MyRaceManager.MyCommunicator.Send(OutGoingMessage1, client.MyEndPoint);
+
+            }
+            if (_MyRaceManager.MyRunners.Count != 0 )
+            {
+
+            foreach (var runner in _MyRaceManager.MyRunners)
+            {
+                string OutGoingMessage2 = "Athlete,"+runner.bibNumber+","+runner.firstName+","+runner.lastName+","+runner.gender+","+runner.age;
+                _MyRaceManager.MyCommunicator.Send(OutGoingMessage2,client.MyEndPoint); 
+            }
 
             }
             //Usually the communicator would have the ip and endpoint info,
