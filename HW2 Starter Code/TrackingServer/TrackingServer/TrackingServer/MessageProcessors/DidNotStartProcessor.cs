@@ -16,7 +16,7 @@ namespace TrackingServer
                 {
                     //athlete.startTime = 0;
                     //athlete.finishTime = -1;
-                    athlete.status = "did not start";
+                    athlete.status = "DidNotStart";
                     string outGoingMessage = "Status,"+athlete.bibNumber+","+athlete.status+","+athlete.startTime+","+athlete.distanceCovered+","+athlete.lastUpdatedTime+","+athlete.finishTime;
                     foreach (var client in _MyRaceManager.MyClients)
                     {

@@ -16,7 +16,7 @@ namespace TrackingServer
                 {
                     athlete.lastUpdatedTime = Convert.ToDouble(Message[2]);
                     athlete.distanceCovered = Convert.ToDouble(Message[3]);
-                    athlete.status = "Running";
+                    athlete.status = "OnCourse";
                     string outGoingMessage = "Status," + athlete.bibNumber + "," + athlete.status + "," + athlete.startTime + "," + athlete.distanceCovered + "," + athlete.lastUpdatedTime + "," + athlete.finishTime;
                     foreach (var client in _MyRaceManager.MyClients)
                     {
